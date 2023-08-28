@@ -24,13 +24,19 @@ platform :android do
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
     gradle(task: "clean bundleRelease")
-  
+    upload_to_play_store(
+      # release | beta
+      track:"internal",
+      release_status:'draft'
+    )
    
   end
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
     gradle(task: "clean bundleRelease")
-    upload_to_play_store
+    upload_to_play_store(
+      track:"internal"
+    )
   end
 end
