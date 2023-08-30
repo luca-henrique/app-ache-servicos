@@ -1,8 +1,8 @@
 name: Release stage version on stage branch
 
 on:
-  push: branch:[stage]
-
+  push:
+    branches: [stage]
 jobs:
   build:
     name: Bump version and trigger circle ci release
@@ -15,8 +15,8 @@ jobs:
       - name: Check work dir
         run: pwd
 
-      - name: Install react native version handler
-        run: npm install -g react-native-version-handler
+      - name: Install react native version handle
+        run: npm i -g react-native-version-handler
 
       - name: Copying the config file to home directory
         run: cp .versioning.config.json ~/.projects.config.json
