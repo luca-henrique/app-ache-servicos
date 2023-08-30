@@ -1,7 +1,8 @@
 name: Release stage version on stage branch
 
 on:
-  push: branch:[stage]
+  push: 
+    branch:[stage]
 
 jobs:
   build:
