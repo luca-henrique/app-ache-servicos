@@ -48,6 +48,9 @@ jobs:
       - run:
           name: 'Decoding deploy key from base64'
           command: echo $ANDROID_KEY | base64 --decode > ./app/my-upload-key.keystore
+       - run:
+          name: 'Node version'
+          command: echo node -v
       - run:
           name: 'Decoding fastlane-service from base64'
           command: echo $PLAY_STORE_CREDENTIALS | base64 --decode > ./play-store-credentials.json
