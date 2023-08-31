@@ -38,6 +38,10 @@ jobs:
       - image: circleci/android:api-30-node
     resource_class: medium+
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
       - checkout:
           path: ~/app-ache-servicos
       - attach_workspace:
