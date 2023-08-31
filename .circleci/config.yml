@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-stage-android:
     docker:
-      - image: circleci/node:18.16.1
+      - image: cimg/node:18.16.1
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
 
   build-production-android:
     docker:
-      - image: circleci/node:18.16.1
+      - image: cimg/node:18.16.1
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
