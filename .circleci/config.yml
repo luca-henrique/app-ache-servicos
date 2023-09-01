@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-stage-android:
     docker:
-      - image: cimg/android:2023.08.1-node
+      - image: circleci/node:10
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
 
   build-production-android:
     docker:
-      - image: cimg/android:2023.08.1-node
+      - image: circleci/node:10
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
@@ -35,7 +35,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
     docker:
-      - image: cimg/android:2023.08.1-node
+      - image: circleci/android:api-30-node
     resource_class: medium+
     steps:
       - checkout:
@@ -67,7 +67,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
     docker:
-      - image: cimg/android:2023.08
+      - image: circleci/android:api-30-node
     resource_class: medium+
     steps:
       - checkout:
