@@ -30,8 +30,8 @@ jobs:
       - name: Copying the config file to home directory
         run: cp .versioning.config.json ~/.projects.config.json
 
-      - name: Running Android bump version AcheServicos
-        run: release android stage AcheServicos
+      - name: Running Android bump version app-ache-servicos
+        run: release android stage app-ache-servicos
         env:
           FASTLANE_HIDE_CHANGELOG: 1
           FASTLANE_SKIP_UPDATE_CHECK: 1
