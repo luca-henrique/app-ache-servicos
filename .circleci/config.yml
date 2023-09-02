@@ -35,7 +35,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
     docker:
-      - image: circleci/android:api-30-node
+      - image: circleci/node:16
     resource_class: medium+
     steps:
       - checkout:
@@ -67,7 +67,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
     docker:
-      - image: circleci/android:api-30-node
+      - image: circleci/node:16
     resource_class: medium+
     steps:
       - checkout:
