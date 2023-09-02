@@ -3,13 +3,13 @@ version: 2.1
 jobs:
   build-stage-android:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20.1
     working_directory: ~/AcheServicos
     steps:
       - checkout
       - run:
           name: 'Installing dependencies'
-          command: npm install --legacy-peer-deps
+          command: npm install
       - persist_to_workspace:
           root: ~/AcheServicos
           paths:
@@ -17,13 +17,13 @@ jobs:
 
   build-production-android:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20.1
     working_directory: ~/AcheServicos
     steps:
       - checkout
       - run:
           name: 'Installing dependencies'
-          command: npm install --legacy-peer-deps
+          command: npm install
       - persist_to_workspace:
           root: ~/AcheServicos
           paths:
@@ -113,7 +113,7 @@ jobs:
           command: cd ios && bundle exec fastlane cert
       - run:
           name: 'Installing npm dependencies'
-          command: npm install --legacy-peer-deps
+          command: npm install
       - run:
           name: 'Installing pods dependencies'
           command: cd ios && pod install
