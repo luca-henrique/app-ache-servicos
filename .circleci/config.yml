@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-stage-android:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:20.5.1
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
 
   build-production-android:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:20.5.1
     working_directory: ~/app-ache-servicos
     steps:
       - checkout
@@ -34,10 +34,11 @@ jobs:
       - GRADLE_OPTS: -Xmx2048m -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
-    docker:
-      - image: circleci/node:16
+   docker:
+      - image: cimg/android:2021.08.1-node
     resource_class: medium+
     steps:
+      - run: node --version  
       - checkout:
           path: ~/app-ache-servicos
       - attach_workspace:
@@ -67,9 +68,10 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/app-ache-servicos/android
     docker:
-      - image: circleci/node:16
+      - image: cimg/android:2021.08.1-node
     resource_class: medium+
     steps:
+      - run: node --version    
       - checkout:
           path: ~/app-ache-servicos
       - attach_workspace:
