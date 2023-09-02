@@ -35,7 +35,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/AcheServicos/android
     docker:
-      - image: circleci/android:api-30-node
+      - image: cimg/android:2023.08.1-node
     resource_class: medium+
     steps:
       - checkout:
@@ -67,7 +67,7 @@ jobs:
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
     working_directory: ~/AcheServicos/android
     docker:
-      - image: circleci/android:api-30-node
+      - image: cimg/android:2023.08.1-node
     resource_class: medium+
     steps:
       - checkout:
