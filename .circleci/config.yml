@@ -38,7 +38,6 @@ jobs:
       - image: cimg/android:2021.08.1-node
     resource_class: medium+
     steps:
-      - run: node --version  
       - checkout:
           path: ~/app-ache-servicos
       - attach_workspace:
@@ -71,7 +70,6 @@ jobs:
       - image: cimg/android:2021.08.1-node
     resource_class: medium+
     steps:
-      - run: node --version    
       - checkout:
           path: ~/app-ache-servicos
       - attach_workspace:
