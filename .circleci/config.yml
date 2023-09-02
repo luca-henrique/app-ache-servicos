@@ -4,28 +4,28 @@ jobs:
   build-stage-android:
     docker:
       - image: circleci/node:16
-    working_directory: ~/app-ache-servicos
+    working_directory: ~/AcheServicos
     steps:
       - checkout
       - run:
           name: 'Installing dependencies'
           command: npm install --legacy-peer-deps
       - persist_to_workspace:
-          root: ~/app-ache-servicos
+          root: ~/AcheServicos
           paths:
             - node_modules
 
   build-production-android:
     docker:
       - image: circleci/node:16
-    working_directory: ~/app-ache-servicos
+    working_directory: ~/AcheServicos
     steps:
       - checkout
       - run:
           name: 'Installing dependencies'
           command: npm install --legacy-peer-deps
       - persist_to_workspace:
-          root: ~/app-ache-servicos
+          root: ~/AcheServicos
           paths:
             - node_modules
 
@@ -33,18 +33,18 @@ jobs:
     environment:
       - GRADLE_OPTS: -Xmx2048m -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
-    working_directory: ~/app-ache-servicos/android
+    working_directory: ~/AcheServicos/android
     docker:
       - image: circleci/android:api-30-node
     resource_class: medium+
     steps:
       - checkout:
-          path: ~/app-ache-servicos
+          path: ~/AcheServicos
       - attach_workspace:
-          at: ~/app-ache-servicos
+          at: ~/AcheServicos
       - run:
           name: 'setup permissions'
-          command: chown -R $USER:$USER ~/app-ache-servicos
+          command: chown -R $USER:$USER ~/AcheServicos
       - run:
           name: 'Decoding deploy key from base64'
           command: echo $ANDROID_KEY | base64 --decode > ./app/my-upload-key.keystore
@@ -65,18 +65,18 @@ jobs:
     environment:
       - GRADLE_OPTS: -Xmx2048m -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"
       - JAVA_OPTS: '-Xms512m -Xmx2048m'
-    working_directory: ~/app-ache-servicos/android
+    working_directory: ~/AcheServicos/android
     docker:
       - image: circleci/android:api-30-node
     resource_class: medium+
     steps:
       - checkout:
-          path: ~/app-ache-servicos
+          path: ~/AcheServicos
       - attach_workspace:
-          at: ~/app-ache-servicos
+          at: ~/AcheServicos
       - run:
           name: 'setup permissions'
-          command: chown -R $USER:$USER ~/app-ache-servicos
+          command: chown -R $USER:$USER ~/AcheServicos
       - run:
           name: 'Decoding deploy key from base64'
           command: echo $ANDROID_KEY | base64 --decode > ./app/my-upload-key.keystore
