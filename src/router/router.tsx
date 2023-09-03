@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {IntroScreen} from '../screens';
+import {IntroScreen, SelectUserTypeScreen} from '../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +12,10 @@ export default function RouterConfig() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={IntroScreen} />
+        <Stack.Screen
+          name="SelectUserTypeScreen"
+          component={SelectUserTypeScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

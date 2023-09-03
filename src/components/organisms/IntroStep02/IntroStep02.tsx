@@ -8,7 +8,7 @@ import {scale} from '../../../utils';
 
 const {width, height} = Dimensions.get('screen');
 
-export const IntroStep02 = () => {
+export const IntroStep02 = ({handleSkipIntro}) => {
   return (
     <View
       style={{
@@ -46,6 +46,7 @@ export const IntroStep02 = () => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+          onPress={() => handleSkipIntro()}
           style={{
             backgroundColor: '#FFF',
             paddingHorizontal: 12,

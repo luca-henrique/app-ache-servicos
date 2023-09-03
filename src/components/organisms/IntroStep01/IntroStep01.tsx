@@ -8,7 +8,7 @@ const {width, height} = Dimensions.get('screen');
 import {IMAGES} from '../../../assets/images';
 import {scale} from '../../../utils';
 
-export const IntroStep01 = () => {
+export const IntroStep01 = ({handleSkipIntro}) => {
   return (
     <View style={{flex: 1}}>
       <Image
@@ -44,7 +44,8 @@ export const IntroStep01 = () => {
             paddingHorizontal: 12,
             paddingVertical: 4,
             borderRadius: 10,
-          }}>
+          }}
+          onPress={() => handleSkipIntro()}>
           <Text style={{fontSize: 14, lineHeight: 28, color: '#473F3C'}}>
             Pular
           </Text>
