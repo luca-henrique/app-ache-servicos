@@ -19,9 +19,45 @@ export const IntroStep02 = () => {
       <View>
         <Image
           source={IMAGES.introStep02}
-          style={{width: width, height: height / 1.1}}
+          style={{width: width, height: scale(height / 1.2)}}
         />
       </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          top: 80,
+          left: 0,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: scale(16),
+        }}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.25)',
+            paddingHorizontal: 12,
+            paddingVertical: 4,
+            borderRadius: 10,
+          }}>
+          <Text style={{fontSize: 14, lineHeight: 28, color: '#473F3C'}}>
+            Voltar
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#FFF',
+            paddingHorizontal: 12,
+            paddingVertical: 4,
+            borderRadius: 10,
+          }}>
+          <Text style={{fontSize: 14, lineHeight: 28, color: '#473F3C'}}>
+            Pular
+          </Text>
+        </TouchableOpacity>
+      </View>
+
       <View
         style={{
           borderTopLeftRadius: scale(25),
@@ -29,7 +65,7 @@ export const IntroStep02 = () => {
           position: 'absolute',
           bottom: 0,
           backgroundColor: '#fff',
-          height: scale(250),
+          height: scale(240),
           width: width,
           paddingHorizontal: scale(16),
           paddingVertical: scale(24),
