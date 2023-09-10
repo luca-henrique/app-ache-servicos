@@ -3,7 +3,13 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {IntroScreen, SelectUserTypeScreen} from '../screens';
+import {
+  IntroScreen,
+  SelectUserTypeScreen,
+  DetailServiceProviderScreen,
+} from '../screens';
+
+import {BottomNavigation} from './bottom-navigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +22,13 @@ export default function RouterConfig() {
           name="SelectUserTypeScreen"
           component={SelectUserTypeScreen}
         />
+
+        <Stack.Screen
+          name="DetailServiceProviderScreen"
+          component={DetailServiceProviderScreen}
+        />
+
+        <Stack.Screen name="Dashboard" component={BottomNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

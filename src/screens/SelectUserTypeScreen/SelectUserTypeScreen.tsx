@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {scale} from '../../utils';
+import {useNavigation} from '@react-navigation/native';
 
 export const SelectUserTypeScreen = () => {
   const [indexSelectedUserType, setIndexSelectedUserType] = useState(0);
 
   let disabledButton = indexSelectedUserType === 0;
 
-  console.log(disabledButton);
+  const navigation = useNavigation();
 
   return (
     <View style={{flex: 1, backgroundColor: '#fff'}}>
@@ -101,6 +102,7 @@ export const SelectUserTypeScreen = () => {
           }}>
           <TouchableOpacity
             disabled={disabledButton}
+            onPress={() => navigation.navigate('Dashboard')}
             style={{
               width: '100%',
               paddingVertical: scale(16),
