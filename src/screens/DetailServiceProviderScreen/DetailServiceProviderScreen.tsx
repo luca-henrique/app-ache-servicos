@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {DetailServices} from '../../components';
 
 export const DetailServiceProviderScreen = () => {
@@ -100,6 +100,84 @@ export const DetailServiceProviderScreen = () => {
         </View>
       </View>
       <DetailServices />
+      <View style={{paddingHorizontal: 16, backgroundColor: '#fff'}}>
+        <View style={{height: 24}} />
+        <Text>REGIÃO DE ATENDIMENTO</Text>
+        <View style={{height: 16}} />
+        <View
+          style={{
+            borderWidth: 1.5,
+            borderColor: '#F0EEED',
+            borderRadius: 15,
+            backgroundColor: '#FAF9F8',
+          }}>
+          <View
+            style={{
+              height: 200,
+              backgroundColor: '#fff',
+            }}
+          />
+          <View style={{padding: 12}}>
+            <Text>Paraiba, Brasil</Text>
+            <View style={{height: 6}} />
+            <Text>Campina Grande</Text>
+          </View>
+        </View>
+        <View style={{height: 24}} />
+      </View>
+
+      <View style={{paddingHorizontal: 16, backgroundColor: '#fff'}}>
+        <View style={{height: 24}} />
+        <Text>AVALIAÇÕES</Text>
+        <View style={{height: 16}} />
+        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+          <Text>ICONS</Text>
+          <Text>52 avaliações</Text>
+        </View>
+        <View style={{height: 16}} />
+        <View
+          style={{
+            backgroundColor: '#FAF9F8',
+            borderWidth: 1.5,
+            borderColor: '#F0EEED',
+            padding: 12,
+            borderRadius: 16,
+          }}>
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text>João Gomes</Text>
+            <Text>16/04</Text>
+          </View>
+          <View style={{height: 12}} />
+          <Text>
+            Meu computador estava lento e cheio de problemas, e agora funciona
+            perfeitamente. Ótimo atendimento, rápido e eficiente!
+          </Text>
+        </View>
+        <View style={{height: 12}} />
+        <View
+          style={{
+            backgroundColor: '#FAF9F8',
+            borderWidth: 1.5,
+            borderColor: '#F0EEED',
+            padding: 12,
+            borderRadius: 16,
+          }}>
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text>João Gomes</Text>
+            <Text>16/04</Text>
+          </View>
+          <View style={{height: 12}} />
+          <Text>
+            Meu computador estava lento e cheio de problemas, e agora funciona
+            perfeitamente. Ótimo atendimento, rápido e eficiente!
+          </Text>
+        </View>
+        <View style={{height: 12}} />
+        <TouchableOpacity style={{width: '100%', alignItems: 'center'}}>
+          <Text style={{color: '#329FFC'}}>ver mais</Text>
+        </TouchableOpacity>
+        <View style={{height: 24}} />
+      </View>
     </ScrollView>
   );
 };

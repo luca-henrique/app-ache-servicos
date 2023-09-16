@@ -1,0 +1,6 @@
+projectKey=sonarqube-react-project
+serverUrl=http://localhost:8082
+serverVersion=10.2.0.77647
+dashboardUrl=http://localhost:8082/dashboard?id=sonarqube-react-project
+ceTaskId=AYqbxcn-6C568Sb_2mWf
+ceTaskUrl=http://localhost:8082/api/ce/task?id=AYqbxcn-6C568Sb_2mWf
