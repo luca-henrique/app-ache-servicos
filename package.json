@@ -38,7 +38,8 @@
     "react-native-status-bar-height": "^2.6.0",
     "react-native-swiper": "^1.6.0-rc.3",
     "react-redux": "^8.1.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sonarqube-scanner": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
