@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {View, Image, Text, TouchableOpacity, Dimensions} from 'react-native';
 
-import {Dimensions} from 'react-native';
+import {Container} from './style';
 
 const {width, height} = Dimensions.get('screen');
 
@@ -10,7 +10,7 @@ import {scale} from '../../../utils';
 
 export const IntroStep01 = ({handleSkipIntro}) => {
   return (
-    <View style={{flex: 1}}>
+    <Container>
       <Image
         source={IMAGES.introStep01}
         style={{width: width, height: scale(height / 1.2)}}
@@ -96,6 +96,6 @@ export const IntroStep01 = ({handleSkipIntro}) => {
           <Text style={{color: '#fff', fontWeight: 600}}>Próximo</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </Container>
   );
 };

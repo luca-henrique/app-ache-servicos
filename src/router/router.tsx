@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, NavigationProp} from '@react-navigation/native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -11,7 +11,14 @@ import {
 
 import {BottomNavigation} from './bottom-navigation';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  SelectUserTypeScreen: undefined;
+  DetailServiceProviderScreen: undefined;
+  Dashboard: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RouterConfig() {
   return (
