@@ -11,5 +11,9 @@ export const useNavigate = () => {
     navigation.navigate(navigateTo);
   };
 
-  return {handleNavigation};
+  const handleNavigationBack = () => {
+    navigation.goBack();
+  };
+
+  return {handleNavigation, handleNavigationBack};
 };
