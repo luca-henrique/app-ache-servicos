@@ -53,12 +53,25 @@ interface IButton extends TouchableOpacityProps {
   variant?: string;
 }
 
-export const Button = ({children, onPress, variant = 'secondary'}: IButton) => {
+export const Button = ({
+  children,
+  variant = 'secondary',
+  disabled,
+  ...props
+}: IButton) => {
   //@ts-ignore
   const buttonCustom = buttonStyle[variant];
 
+  const changeBackgroundColorDisabled = disabled && '#807875';
+
   return (
-    <TouchableOpacity style={{...buttonCustom.container}} onPress={onPress}>
+    <TouchableOpacity
+      disabled={disabled}
+      style={{
+        ...buttonCustom.container,
+        ...(disabled && {backgroundColor: changeBackgroundColorDisabled}),
+      }}
+      {...props}>
       <Text style={{...buttonCustom.text}}>{children}</Text>
     </TouchableOpacity>
   );

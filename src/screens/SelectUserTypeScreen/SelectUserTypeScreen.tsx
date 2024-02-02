@@ -1,119 +1,71 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {scale} from '../../utils';
-import {useNavigation} from '@react-navigation/native';
+import {getBottomSpaceHeight} from '../../utils';
+import {Typography} from '../../components/atoms/Typography/Typography';
+import {useNavigate} from '../../hook/useNavigation';
+
+import {HeaderSelectUserType} from '../../components/organisms/HeaderSelectUserType/HeaderSelectUserType';
+import {Separator} from '../../components/atoms/Separator/Separator';
+import {UserTypeContainer} from '../../components/molecules/UserTypeContainer/UserTypeContainer';
+import {Button} from '../../components/atoms/Button/Button';
+
+import * as S from './style';
 
 export const SelectUserTypeScreen = () => {
-  const [indexSelectedUserType, setIndexSelectedUserType] = useState(0);
+  const [indexSelectedUserType, setIndexSelectedUserType] = useState(3);
 
-  let disabledButton = indexSelectedUserType === 0;
+  let disabledButton = indexSelectedUserType === 3;
 
-  const navigation = useNavigation();
+  const handleSelectUserType = (userType: number) => {
+    if (userType === indexSelectedUserType) {
+      setIndexSelectedUserType(3);
+    } else {
+      setIndexSelectedUserType(userType);
+    }
+  };
+
+  const {handleNavigation} = useNavigate();
 
   return (
-    <View style={{flex: 1, backgroundColor: '#fff'}}>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          marginTop: 70,
-          paddingHorizontal: 16,
-        }}>
-        <Text>Volta</Text>
-        <Text>Selecionar</Text>
-      </View>
+    <S.Container>
+      <HeaderSelectUserType />
 
-      <View
-        style={{
-          backgroundColor: '#FAF9F8',
-          paddingHorizontal: 16,
-          marginTop: 16,
-          borderTopWidth: 1.5,
-          borderColor: '#F0EEED',
-          height: '100%',
-        }}>
-        <Text style={{color: '#807875', marginTop: 24, marginBottom: 16}}>
+      <S.Main>
+        <Separator size={16} />
+
+        <Typography typography="h4" colorVariant="_01">
           Selecione como você quer usar o AcheServiços
-        </Text>
+        </Typography>
 
-        <TouchableOpacity
-          onPress={() => setIndexSelectedUserType(1)}
-          style={{
-            padding: 16,
-            borderWidth: 1.5,
-            borderRadius: 15,
-            borderColor:
-              indexSelectedUserType === 1
-                ? 'rgba(255, 119, 74, 0.20)'
-                : '#F0EEED',
-            backgroundColor:
-              indexSelectedUserType === 1 ? 'rgba(255, 119, 74, 0.10)' : '#FFF',
-          }}>
-          <View
-            style={{
-              padding: 10,
-              borderWidth: 1.5,
-              borderRadius: 10,
-              borderColor: '#F0EEED',
-              width: 38,
-              backgroundColor: indexSelectedUserType === 1 && '#fff',
-            }}>
-            <Text>U</Text>
-          </View>
-          <View style={{height: 16}} />
-          <Text style={{color: '#1A1918'}}>Encontrar profissionais</Text>
-          <View style={{height: 6}} />
-          <Text style={{color: '#807875'}}>Para realizar um serviços</Text>
-        </TouchableOpacity>
-        <View style={{height: 16}} />
-        <TouchableOpacity
-          onPress={() => setIndexSelectedUserType(2)}
-          style={{
-            padding: 16,
-            borderWidth: 1.5,
-            borderRadius: 15,
-            borderColor:
-              indexSelectedUserType === 2
-                ? 'rgba(255, 119, 74, 0.20)'
-                : '#F0EEED',
-            backgroundColor:
-              indexSelectedUserType === 2 ? 'rgba(255, 119, 74, 0.10)' : '#FFF',
-          }}>
-          <View
-            style={{
-              padding: 10,
-              borderWidth: 1.5,
-              borderRadius: 10,
-              borderColor: '#F0EEED',
-              width: 38,
-              backgroundColor: indexSelectedUserType === 2 && '#fff',
-            }}>
-            <Text>U</Text>
-          </View>
-          <View style={{height: 16}} />
-          <Text style={{color: '#1A1918'}}>Encontrar profissionais</Text>
-          <View style={{height: 6}} />
-          <Text style={{color: '#807875'}}>Para que clientes me encontrem</Text>
-        </TouchableOpacity>
-        <View
-          style={{
-            height: '40%',
-            justifyContent: 'flex-end',
-          }}>
-          <TouchableOpacity
+        <Separator size={8} />
+
+        <UserTypeContainer
+          icon="user-icon"
+          title="Encontrar profissionais"
+          description="Para realizar um serviços"
+          onPress={() => handleSelectUserType(0)}
+          selected={indexSelectedUserType === 0}
+        />
+
+        <Separator size={8} />
+
+        <UserTypeContainer
+          icon="service-icon"
+          title="Oferecer serviços"
+          description="Para que clientes me encontrem"
+          onPress={() => handleSelectUserType(1)}
+          selected={indexSelectedUserType === 1}
+        />
+
+        <S.Footer>
+          <Button
+            variant="primary"
             disabled={disabledButton}
-            onPress={() => navigation.navigate('Dashboard')}
-            style={{
-              width: '100%',
-              paddingVertical: scale(16),
-              backgroundColor: !disabledButton ? '#FF774A' : '#807875',
-              borderRadius: scale(16),
-              alignItems: 'center',
-            }}>
-            <Text style={{color: '#fff', fontWeight: 600}}>Começar</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+            onPress={() => handleNavigation('Dashboard')}>
+            Começar
+          </Button>
+        </S.Footer>
+        <Separator size={getBottomSpaceHeight()} />
+      </S.Main>
+    </S.Container>
   );
 };

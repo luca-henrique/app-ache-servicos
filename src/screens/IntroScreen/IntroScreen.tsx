@@ -8,6 +8,7 @@ import {IMAGES} from '../../assets/images';
 import {LayoutStep} from '../../components/layout/LayoutStep/LayoutStep';
 import {FooterLayoutIntro} from '../../components/molecules/FooterLayoutIntro/FooterLayoutIntro';
 import {HeaderLayoutIntro} from '../../components/molecules/HeaderLayoutIntro/HeaderLayoutIntro';
+import {IconComponent} from '../../components/atoms/Icon/Icon';
 
 export const IntroScreen = () => {
   const {handleNavigation} = useNavigate();
@@ -51,6 +52,7 @@ export const IntroScreen = () => {
           handleSkip={handleSkipIntro}
           nextText="Pular"
         />
+
         <FooterLayoutIntro
           handleNext={() => handleNextStep(1)}
           title={
