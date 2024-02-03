@@ -46,7 +46,7 @@ export const SelectUserTypeScreen = () => {
           selected={indexSelectedUserType === 0}
         />
 
-        <Separator size={8} />
+        <Separator size={12} />
 
         <UserTypeContainer
           icon="service-icon"

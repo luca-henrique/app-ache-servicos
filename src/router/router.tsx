@@ -25,12 +25,14 @@ export default function RouterConfig() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="SelectUserTypeScreen">
+        initialRouteName="Dashboard">
         <Stack.Screen name="Home" component={IntroScreen} />
         <Stack.Screen
           name="SelectUserTypeScreen"
           component={SelectUserTypeScreen}
         />
+
+        <Stack.Screen name="Dashboard" component={BottomNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,11 +1,12 @@
 import React, {ReactNode} from 'react';
 import {TouchableOpacity, Text, TouchableOpacityProps} from 'react-native';
 import {scale} from '../../../utils';
+import {IconComponent} from '../Icon/Icon';
 
 const buttonStyle = {
   primary: {
     container: {
-      flexDirections: 'row',
+      flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: '#FF774A',
       paddingVertical: scale(10),
@@ -20,7 +21,7 @@ const buttonStyle = {
   },
   secondary: {
     container: {
-      flexDirections: 'row',
+      flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: '#FFF',
       paddingHorizontal: scale(12),
@@ -30,6 +31,22 @@ const buttonStyle = {
     text: {
       fontSize: scale(14),
       lineHeight: scale(28),
+      color: '#473F3C',
+    },
+  },
+  secondaryIcon: {
+    container: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: scale(10),
+      paddingVertical: scale(6),
+      borderRadius: scale(30),
+      backgroundColor: 'rgba(128, 120, 117, 0.15)',
+      gap: scale(4),
+    },
+    text: {
+      fontSize: scale(14),
+      lineHeight: scale(16),
       color: '#473F3C',
     },
   },
@@ -51,12 +68,14 @@ const buttonStyle = {
 interface IButton extends TouchableOpacityProps {
   children: ReactNode;
   variant?: string;
+  iconName?: string;
 }
 
 export const Button = ({
   children,
   variant = 'secondary',
   disabled,
+  iconName,
   ...props
 }: IButton) => {
   //@ts-ignore
@@ -72,6 +91,7 @@ export const Button = ({
         ...(disabled && {backgroundColor: changeBackgroundColorDisabled}),
       }}
       {...props}>
+      {iconName ? <IconComponent icon={iconName} /> : null}
       <Text style={{...buttonCustom.text}}>{children}</Text>
     </TouchableOpacity>
   );

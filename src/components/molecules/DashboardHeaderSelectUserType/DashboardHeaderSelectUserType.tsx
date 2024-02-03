@@ -1,53 +1,36 @@
 import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
 
-import {useState} from 'react';
+import {SelectUserTypeTabItem} from '../SelectUserTypeTabItem/SelectUserTypeTabItem';
+import {Typography} from '../../atoms/Typography/Typography';
 
-export const DashboardHeaderSelectUserType = () => {
-  const [userType, setUseType] = useState(0);
+import * as S from './style';
 
+interface IDashboardHeaderSelectUserType {
+  handleSelectUserType: (userSelected: number) => void;
+  userType: number;
+}
+
+export const DashboardHeaderSelectUserType = ({
+  handleSelectUserType,
+  userType,
+}: IDashboardHeaderSelectUserType) => {
   return (
-    <View>
-      <Text>O QUE VOCÊ PRECISA?</Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 16,
-          borderRadius: 20,
-          borderWidth: 1.5,
-          padding: 8,
-          backgroundColor: '#fff',
-          borderColor: '#F0EEED',
-        }}>
-        <TouchableOpacity
-          style={{
-            width: '50%',
-            padding: 12,
-            backgroundColor: userType === 0 ? 'rgba(255,119,74, 0.2)' : '#fff',
-            borderRadius: 15,
-          }}
-          onPress={() => setUseType(0)}>
-          <Text style={{color: userType === 0 ? '#FF774A' : '#807875'}}>
-            Encontrar
-          </Text>
-          <View style={{height: 6}} />
-          <Text style={{color: '#1A1918'}}>Profissionais</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => setUseType(1)}
-          style={{
-            width: '50%',
-            padding: 12,
-            backgroundColor: userType === 1 ? 'rgba(255,119,74, 0.2)' : '#fff',
-            borderRadius: 15,
-          }}>
-          <Text style={{color: userType === 1 ? '#FF774A' : '#807875'}}>
-            Oferecer
-          </Text>
-          <View style={{height: 6}} />
-          <Text color={{color: '#473F3C'}}>Serviços</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <S.Container>
+      <Typography typography="h4">O QUE VOCÊ PRECISA?</Typography>
+      <S.TabContainer>
+        <SelectUserTypeTabItem
+          title="Encontrar"
+          description="Profissionais"
+          selected={userType === 0}
+          onPress={() => handleSelectUserType(0)}
+        />
+        <SelectUserTypeTabItem
+          title="Oferecer"
+          description="Serviços"
+          selected={userType === 1}
+          onPress={() => handleSelectUserType(1)}
+        />
+      </S.TabContainer>
+    </S.Container>
   );
 };

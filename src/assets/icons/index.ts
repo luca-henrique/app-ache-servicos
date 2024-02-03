@@ -9,6 +9,10 @@ import SettingIcon from './setting-icon.svg';
 import StarIcon from './star-icon.svg';
 import UserIcon from './user-icon.svg';
 
+import ServiceContentIcon from './service-content.svg';
+import TechnicalAssistanceIcon from './technical-assistance-icon.svg';
+import DesignIcon from './design-icon.svg';
+
 export const Icons = {
   'arrow-left': ArrowLeft,
   'chat-icon': ChatIcon,
@@ -20,4 +24,7 @@ export const Icons = {
   'setting-icon': SettingIcon,
   'star-icon': StarIcon,
   'user-icon': UserIcon,
+  'service-content-icon': ServiceContentIcon,
+  'technical-assistance-icon': TechnicalAssistanceIcon,
+  'design-icon': DesignIcon,
 };
