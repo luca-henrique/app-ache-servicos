@@ -11,7 +11,7 @@ export const TabContainer = styled.View`
   flex-direction: row;
   margin-top: ${scale(8)}px;
   border-radius: ${scale(20)}px;
-  border-width: ${scale(1.5)}px;
+  border-width: 2px;
   padding: ${scale(8)}px;
   background-color: #fff;
   border-color: #f0eeed;

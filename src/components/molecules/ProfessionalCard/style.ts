@@ -5,7 +5,7 @@ export const Card = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   padding: ${scale(12)}px;
-  border-width: ${scale(1.5)}px;
+  border-width: 2px;
   border-radius: ${scale(10)}px;
   margin-bottom: ${scale(10)}px;
   border-color: #f0eeed;

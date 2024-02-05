@@ -23,7 +23,6 @@ export const DashboardListServiceProvider = () => {
 
   return (
     <FlatList
-      style={{height: scale(300)}}
       data={MOCK_PROFESSION}
       renderItem={({item}) => (
         <ProfessionalCard

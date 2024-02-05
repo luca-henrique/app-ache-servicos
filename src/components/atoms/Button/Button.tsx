@@ -8,6 +8,7 @@ const buttonStyle = {
     container: {
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: '#FF774A',
       paddingVertical: scale(10),
       borderRadius: scale(10),

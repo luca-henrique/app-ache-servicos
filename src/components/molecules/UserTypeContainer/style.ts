@@ -7,7 +7,7 @@ interface ITouchableOpacity {
 
 export const Container = styled.TouchableOpacity<ITouchableOpacity>`
   padding: ${scale(16)}px;
-  border-width: ${scale(1.5)}px;
+  border-width: 2px;
   border-radius: ${scale(16)}px;
   border-color: ${props =>
     props.selected ? 'rgba(255, 119, 74, 0.20)' : '#F0EEED'};
@@ -17,7 +17,7 @@ export const Container = styled.TouchableOpacity<ITouchableOpacity>`
 
 export const IconContainer = styled.View<ITouchableOpacity>`
   padding: ${scale(10)}px;
-  border-width: ${scale(1.5)}px;
+  border-width: 2px;
   border-radius: ${scale(10)}px;
   border-color: #f0eeed;
   width: ${scale(46)}px;

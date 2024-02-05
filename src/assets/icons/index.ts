@@ -13,6 +13,8 @@ import ServiceContentIcon from './service-content.svg';
 import TechnicalAssistanceIcon from './technical-assistance-icon.svg';
 import DesignIcon from './design-icon.svg';
 
+import LogoIcon from './logo-icon.svg';
+
 export const Icons = {
   'arrow-left': ArrowLeft,
   'chat-icon': ChatIcon,
@@ -27,4 +29,5 @@ export const Icons = {
   'service-content-icon': ServiceContentIcon,
   'technical-assistance-icon': TechnicalAssistanceIcon,
   'design-icon': DesignIcon,
+  'logo-icon': LogoIcon,
 };
