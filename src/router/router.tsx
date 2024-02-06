@@ -6,7 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   IntroScreen,
   SelectUserTypeScreen,
-  DetailServiceProviderScreen,
+  ProfessionalDetailScreen,
 } from '../screens';
 
 import {BottomNavigation} from './bottom-navigation';
@@ -16,6 +16,7 @@ export type RootStackParamList = {
   SelectUserTypeScreen: undefined;
   DetailServiceProviderScreen: undefined;
   Dashboard: undefined;
+  ProfessionalDetailScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -25,7 +26,7 @@ export default function RouterConfig() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Dashboard">
+        initialRouteName="Home">
         <Stack.Screen name="Home" component={IntroScreen} />
         <Stack.Screen
           name="SelectUserTypeScreen"
@@ -33,6 +34,10 @@ export default function RouterConfig() {
         />
 
         <Stack.Screen name="Dashboard" component={BottomNavigation} />
+        <Stack.Screen
+          name="ProfessionalDetailScreen"
+          component={ProfessionalDetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

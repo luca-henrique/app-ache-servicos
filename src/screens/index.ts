@@ -1,6 +1,6 @@
 export {IntroScreen} from './IntroScreen/IntroScreen';
 export {SelectUserTypeScreen} from './SelectUserTypeScreen/SelectUserTypeScreen';
-export {DetailServiceProviderScreen} from './DetailServiceProviderScreen/DetailServiceProviderScreen';
+export {ProfessionalDetailScreen} from './ProfessionalDetailScreen/ProfessionalDetailScreen';
 
 export {ConfigUserScreen} from './ConfigUserScreen/ConfigUserScreen';
 export {HomeScreen} from './HomeScreen/HomeScreen';

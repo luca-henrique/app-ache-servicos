@@ -2,7 +2,6 @@ import React from 'react';
 
 import {FlatList} from 'react-native';
 import {ProfessionalCard} from '../ProfessionalCard/ProfessionalCard';
-import {scale} from '../../../utils';
 import {useNavigate} from '../../../hook/useNavigation';
 import {MOCK_PROFESSION} from '../../../mock/professional.mock';
 
@@ -18,7 +17,7 @@ export const DashboardListServiceProvider = () => {
   const {handleNavigation} = useNavigate();
 
   const detailProfessionalById = (uuid: string) => {
-    handleNavigation('DetailServiceProviderScreen');
+    handleNavigation('ProfessionalDetailScreen');
   };
 
   return (
